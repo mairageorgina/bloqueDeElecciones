@@ -1,0 +1,50 @@
+<div class="wrapper"
+{{#if scrutinizedRatio}}
+data-hasratios
+{{/if}}
+>
+    <title-header class="head title-header">
+        <div class="choosing">{{ choosing }}</div>
+        <div class="district">{{ district }}</div>
+    </title-header>
+    <div class="groups">
+        {{#each groups}}
+            <div class="group" style="{{
+                styles
+                --group-ratio=(concat (math ratio '*' 100) '%')
+                --group-color=color
+                --group-contrast-color=contrastColor
+                --group-anticontrast-color=anticontrastColor
+            }}">
+                <div class="group-head">
+                    <div class="superparty">{{ superParty }}</div>
+                    <div class="superparty-ratio">
+                        {{#if ratio}}
+                            {{ decimals (math ratio '*' 100) }} %
+                        {{else}}
+                            Esperando resultados
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="items">
+                    {{#each items}}
+                        <div class="person">
+                            <img class="person-photo" loading="lazy" src="{{ resizerUrl src=photoUrl width=64 height=64 format='webp' }}" />
+                            <div class="person-detail">
+                                {{#if ratio}}
+                                    <div class="person-ratio">{{ decimals (math ratio '*' 100) }} %</div>
+                                {{/if}}
+                                <div class="person-name">{{ firstPersonShort }}</div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="foot">
+        {{#if scrutinizedRatio}}
+            <div>Escrutado {{ decimals (math scrutinizedRatio '*' 100) }} %</div>
+        {{/if}}
+    </div>
+</div>
