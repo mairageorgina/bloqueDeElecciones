@@ -28,14 +28,12 @@
         .group {
             // card-container
             border-radius: 12px;
-            @bg-image: var(--bg-image);
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 46.35%, rgba(0, 0, 0, 0.87) 100%), linear-gradient(90deg, rgba(55, 197, 255, 0.80) 0%, rgba(75, 203, 255, 0.00) 100%), linear-gradient(0deg, rgba(9, 163, 227, 0.50) 0%, rgba(9, 163, 227, 0.50) 100%), url(data-uri(@bg-image)), lightgray 50% / cover no-repeat;
             background-blend-mode: normal, normal, color, normal;
             padding: 22px 27px;
             display: flex;
             flex-direction: column;
             height: 284px;
-            min-width: 192px;
+            min-width: 400px;
             justify-content: space-between;
             flex-shrink: 0;
             // background-color: color-mix(in srgb, var(--group-color) 10%, var(--primary-background-color));
@@ -88,9 +86,8 @@
                 display: flex;
                 gap: var(--spacing-horizontal);
                 align-items: flex-end;
-                flex-direction: row;
-                flex-wrap: nowrap;
-
+    flex-direction: row;
+    flex-wrap: nowrap;
                 .person {
                     font-size: 16px;
                     display: flex;

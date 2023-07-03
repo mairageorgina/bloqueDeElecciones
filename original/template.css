@@ -17,35 +17,19 @@
 .wrapper .head .district {
   font-weight: bold;
 }
-.wrapper .foot {
-  font-size: 14px;
-  margin: 8px 0;
-}
 .wrapper .groups {
   display: flex;
   overflow-x: auto;
   gap: var(--spacing-horizontal);
-  padding-bottom: 8px;
-}
-.wrapper .groups::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-}
-.wrapper .groups::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-  background-color: #F5F5F5;
-}
-.wrapper .groups::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
 }
 .wrapper .groups .group {
-  background: var(--secondary-background-color);
-  padding: var(--spacing-horizontal);
+  border-radius: 12px;
+  background-blend-mode: normal, normal, color, normal;
+  padding: 22px 27px;
   display: flex;
   flex-direction: column;
-  height: 220px;
-  min-width: 192px;
+  height: 284px;
+  min-width: 400px;
   justify-content: space-between;
   flex-shrink: 0;
   background-color: var(--secondary-background-color);
@@ -57,88 +41,87 @@
   align-items: flex-start;
 }
 .wrapper .groups .group .group-head .superparty {
-  font-size: 1.4em;
-  font-weight: bold;
-  display: inline-block;
-  background: var(--group-color);
-  color: var(--group-contrast-color);
-  padding: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #FFF;
+  font-size: 32px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .wrapper .groups .group .group-head .superparty-ratio {
   margin-top: 4px;
   display: inline-block;
-  background: var(--group-color);
-  color: var(--group-contrast-color);
-  padding: 4px /*
+  color: #FFF;
+  font-size: 32px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  /*
                     width: 128px;
                     background: var(--group-anticontrast-color) linear-gradient(90deg, var(--group-color) var(--group-ratio), transparent var(--group-ratio));
                     padding: 4px 8px;
                     font-size: 16px;
                     font-weight: bold;
                     text-shadow: 0 0 2px var(--group-anticontrast-color);
-                    */;
+                    */
 }
 .wrapper .groups .group .items {
   font-size: 16px;
   display: flex;
   gap: var(--spacing-horizontal);
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 .wrapper .groups .group .items .person {
-  width: 192px;
   font-size: 16px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   gap: var(--spacing-horizontal);
+  color: #FFF;
+  font-family: Roboto Slab;
+  margin-right: 3rem;
 }
 .wrapper .groups .group .items .person:not(:last-child) {
   padding-right: var(--spacing-horizontal);
   border-right: 1px solid var(--fixed-color);
 }
 .wrapper .groups .group .items .person .person-photo {
+  border: 2px solid #FFF;
   width: 64px;
   height: 64px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid;
-  border-color: var(--group-color);
   box-shadow: 0 2px 4px #000a;
 }
 .wrapper .groups .group .items .person .person-detail {
-  width: 0;
-  flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: flex-end;
   padding: 8px 0;
   gap: 4px;
 }
 .wrapper .groups .group .items .person .person-detail .person-name {
-  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .groups .group .items .person .person-detail .person-ratio {
+  text-wrap: nowrap;
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child {
-  width: 256px;
   font-size: 18px;
 }
-.wrapper[data-hasratios] .groups .group .items .person:first-child .person-detail {
-  text-decoration: underline;
-  text-decoration-color: var(--group-color);
-  text-decoration-thickness: 3px;
-  text-decoration-skip-ink: none;
-  text-underline-offset: 3px;
+.wrapper[data-hasratios] .groups .group .items .person:first-child .person-detail .person-name {
+  color: #FFF;
+  font-size: 24px;
+  font-family: Roboto Slab;
+  display: flex;
+  flex-direction: row;
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child .person-photo {
-  border-width: 4px;
-  width: 80px;
-  height: 80px;
-}
-.wrapper[data-hasratios] .groups .group .items .person:not(:first-child) .person-photo {
-  filter: grayscale(1);
-}
-.wrapper[data-hasratios] .groups .group .items .person:not(:first-child) .person-detail {
-  opacity: 0.5;
+  display: none;
 }
 @media (max-width: 768px) {
   .wrapper {

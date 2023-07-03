@@ -9,13 +9,15 @@ data-hasratios
     </title-header>
     <div class="groups">
         {{#each groups}}
-            <div class="group" style="{{
+            <div class="group" style="
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 46.35%, rgba(0, 0, 0, 0.87) 100%), linear-gradient(90deg, {{color}} 0%, rgba(75, 203, 255, 0.00) 100%), linear-gradient(0deg, rgba(9, 163, 227, 0.50) 0%, rgba(9, 163, 227, 0.50) 100%), url({{photoUrl}}), lightgray 50% / cover no-repeat;
+            {{
                 styles
                 --group-ratio=(concat (math ratio '*' 100) '%')
-                --group-color=color
                 --group-contrast-color=contrastColor
                 --group-anticontrast-color=anticontrastColor
-            }}">
+            }}"
+            >
                 <div class="group-head">
                     <div class="superparty">{{ superParty }}</div>
                     <div class="superparty-ratio">
