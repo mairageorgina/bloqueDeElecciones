@@ -1,52 +1,47 @@
-<div class="wrapper"
-{{#if scrutinizedRatio}}
-data-hasratios
-{{/if}}
->
+<div class="wrapper" {{#if scrutinizedRatio}} data-hasratios {{/if}}>
     <title-header class="head title-header">
         <div class="choosing">{{ choosing }}</div>
         <div class="district">{{ district }}</div>
     </title-header>
     <div class="groups">
         {{#each groups}}
-            <div class="group" style="
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 46.35%, rgba(0, 0, 0, 0.87) 100%), linear-gradient(90deg, {{color}} 0%, rgba(75, 203, 255, 0.00) 100%), linear-gradient(0deg, rgba(9, 163, 227, 0.50) 0%, rgba(9, 163, 227, 0.50) 100%), url({{photoUrl}}), lightgray 50% / cover no-repeat;
-            {{
+        <div class="group" style="{{
                 styles
                 --group-ratio=(concat (math ratio '*' 100) '%')
+                --group-color=color
                 --group-contrast-color=contrastColor
                 --group-anticontrast-color=anticontrastColor
-            }}"
-            >
-                <div class="group-head">
-                    <div class="superparty">{{ superParty }}</div>
-                    <div class="superparty-ratio">
-                        {{#if ratio}}
-                            {{ decimals (math ratio '*' 100) }} %
-                        {{else}}
-                            Esperando resultados
-                        {{/if}}
-                    </div>
-                </div>
-                <div class="items">
-                    {{#each items}}
-                        <div class="person">
-                            <img class="person-photo" loading="lazy" src="{{ resizerUrl src=photoUrl width=64 height=64 format='webp' }}" />
-                            <div class="person-detail">
-                                {{#if ratio}}
-                                    <div class="person-ratio">{{ decimals (math ratio '*' 100) }} %</div>
-                                {{/if}}
-                                <div class="person-name">{{ firstPersonShort }}</div>
-                            </div>
-                        </div>
-                    {{/each}}
+            }}">
+            <div class="group-head">
+                <div class="superparty">{{ superParty }}</div>
+                <div class="superparty-ratio">
+                    {{#if ratio}}
+                    {{ decimals (math ratio '*' 100) }} %
+                    {{else}}
+                    Esperando resultados
+                    {{/if}}
                 </div>
             </div>
+            <div class="items">
+                {{#each items}}
+                <div class="person">
+                    <img class="person-photo" loading="lazy"
+                        src="{{ resizerUrl src=photoUrl width=64 height=64 format='webp' }}" />
+                    <div class="person-detail">
+                        {{#if ratio}}
+                        <div class="person-ratio">{{ decimals (math ratio '*' 100) }} %</div>
+                        {{/if}}
+                        <div class="person-name">{{ firstPersonShort }}</div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
         {{/each}}
     </div>
     <div class="foot">
         {{#if scrutinizedRatio}}
-            <div>Escrutado {{ decimals (math scrutinizedRatio '*' 100) }} %</div>
+        <div>Escrutado {{ decimals (math scrutinizedRatio '*' 100) }} %</div>
         {{/if}}
     </div>
 </div>
