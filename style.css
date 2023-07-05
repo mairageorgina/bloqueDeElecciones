@@ -139,16 +139,16 @@
     padding: 0 var(--spacing-horizontal);
   }
   .wrapper .groups .group {
-    background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 34%), #1D2025;
+    background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 54%), #1D2025;
     flex-direction: column;
-    height: fit-content;
+    height: auto;
   }
   .wrapper .groups .group .items {
     flex-wrap: wrap;
     margin-top: 3rem;
   }
   .wrapper .groups .group .items > * {
-    flex: 0 1 1%;
+    flex: 0 1 0%;
   }
   .wrapper .groups .group .items .person {
     margin-right: 2rem;
@@ -157,5 +157,6 @@
     flex-basis: 100%;
     margin-right: 2px;
     padding-bottom: 2rem;
+    width: 0px;
   }
 }

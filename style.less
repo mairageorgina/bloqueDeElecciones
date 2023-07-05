@@ -178,17 +178,17 @@
 
         .groups {
             .group {
-                background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0.00) 34%), #1D2025;
+                background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0.00) 54%), #1D2025;
 
                 flex-direction: column;
-                height: fit-content;
+                height: auto;
 
                 .items {
                     flex-wrap: wrap;
                     margin-top: 3rem;
 
                     &>* {
-                        flex: 0 1 1%;
+                        flex: 0 1 0%;
                     }
 
                     .person {
@@ -204,6 +204,7 @@
                 flex-basis: 100%;
                 margin-right: 2px;
                 padding-bottom: 2rem;
+                width: 0px;
             }
         }
     }
