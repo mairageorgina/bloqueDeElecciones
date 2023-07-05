@@ -25,22 +25,39 @@
         overflow-x: auto;
         gap: var(--spacing-horizontal);
 
+        &::-webkit-scrollbar-track {
+
+            background-color: white;
+        }
+
+        &::-webkit-scrollbar {
+            width: 12px;
+
+            background-color: #F5F5F5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #DaDaDa;
+            border-radius: 20px;
+            border: 3px #DADADA;
+        }
+
         .group {
             // card-container
             border-radius: 12px;
-            background-blend-mode: normal, normal, color, normal;
+            background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0.00) 70%), #1D2025;
             padding: 22px 27px;
             display: flex;
             flex-direction: column;
-            height: 284px;
-            min-width: 400px;
+            height: 286px;
+            min-width: 200px;
             justify-content: space-between;
             flex-shrink: 0;
             // background-color: color-mix(in srgb, var(--group-color) 10%, var(--primary-background-color));
             // border-color: color-mix(in srgb, var(--group-color) 30%, var(--primary-background-color)) !important;
 
             // border: 2px solid;
-            background-color: var(--secondary-background-color); // #f0f0f0;
+            // background-color: var(--secondary-background-color); // #f0f0f0;
             border-radius: var(--border-radius);
 
             // border-color: #ddd;
@@ -59,14 +76,13 @@
                 }
 
                 .superparty-ratio {
-                    margin-top: 4px;
                     display: inline-block;
                     color: #FFF;
                     font-size: 32px;
                     font-family: Open Sans;
                     font-style: normal;
                     font-weight: 700;
-                    line-height: normal;
+                    line-height: 20px;
 
 
                     /*
@@ -85,9 +101,10 @@
                 font-size: 16px;
                 display: flex;
                 gap: var(--spacing-horizontal);
-                align-items: flex-end;
-    flex-direction: row;
-    flex-wrap: nowrap;
+                align-items: flex-start;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
                 .person {
                     font-size: 16px;
                     display: flex;
@@ -95,12 +112,7 @@
                     justify-content: flex-start;
                     color: #FFF;
                     font-family: Roboto Slab;
-                    margin-right: 3rem;
-
-                    &:not(:last-child) {
-                        padding-right: var(--spacing-horizontal);
-                        border-right: 1px solid var(--fixed-color);
-                    }
+                    margin-right: 43px;
 
                     .person-photo {
                         border: 2px solid #FFF;
@@ -115,7 +127,7 @@
                         display: flex;
                         flex-direction: column-reverse;
                         justify-content: flex-end;
-                        padding: 8px 0;
+                        padding: 8px 0 0 0;
                         gap: 4px;
 
                         .person-name {
@@ -135,8 +147,12 @@
     &[data-hasratios] .groups .group .items .person {
         &:first-child {
             font-size: 18px;
+            flex-direction: row;
+            margin-right: 90px;
 
             .person-detail {
+                margin-left: 1rem;
+
                 .person-name {
                     color: #FFF;
                     font-size: 24px;
@@ -147,7 +163,8 @@
             }
 
             .person-photo {
-                display: none;
+                width: 97px;
+                height: 97px;
             }
         }
 
@@ -161,14 +178,32 @@
 
         .groups {
             .group {
-                height: auto;
-                justify-content: flex-start;
+                background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0.00) 34%), #1D2025;
+
+                flex-direction: column;
+                height: fit-content;
 
                 .items {
-                    margin-top: 16px;
-                    flex-direction: column;
-                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    margin-top: 3rem;
+
+                    &>* {
+                        flex: 0 1 1%;
+                    }
+
+                    .person {
+                        margin-right: 2rem;
+                    }
                 }
+            }
+
+        }
+
+        &[data-hasratios] .groups .group .items .person {
+            &:first-child {
+                flex-basis: 100%;
+                margin-right: 2px;
+                padding-bottom: 2rem;
             }
         }
     }

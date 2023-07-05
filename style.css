@@ -22,17 +22,28 @@
   overflow-x: auto;
   gap: var(--spacing-horizontal);
 }
+.wrapper .groups::-webkit-scrollbar-track {
+  background-color: white;
+}
+.wrapper .groups::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+.wrapper .groups::-webkit-scrollbar-thumb {
+  background-color: #DaDaDa;
+  border-radius: 20px;
+  border: 3px #DADADA;
+}
 .wrapper .groups .group {
   border-radius: 12px;
-  background-blend-mode: normal, normal, color, normal;
+  background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 70%), #1D2025;
   padding: 22px 27px;
   display: flex;
   flex-direction: column;
-  height: 284px;
-  min-width: 400px;
+  height: 286px;
+  min-width: 200px;
   justify-content: space-between;
   flex-shrink: 0;
-  background-color: var(--secondary-background-color);
   border-radius: var(--border-radius);
 }
 .wrapper .groups .group .group-head {
@@ -49,14 +60,13 @@
   line-height: normal;
 }
 .wrapper .groups .group .group-head .superparty-ratio {
-  margin-top: 4px;
   display: inline-block;
   color: #FFF;
   font-size: 32px;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 20px;
   /*
                     width: 128px;
                     background: var(--group-anticontrast-color) linear-gradient(90deg, var(--group-color) var(--group-ratio), transparent var(--group-ratio));
@@ -70,7 +80,7 @@
   font-size: 16px;
   display: flex;
   gap: var(--spacing-horizontal);
-  align-items: flex-end;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
 }
@@ -81,11 +91,7 @@
   justify-content: flex-start;
   color: #FFF;
   font-family: Roboto Slab;
-  margin-right: 3rem;
-}
-.wrapper .groups .group .items .person:not(:last-child) {
-  padding-right: var(--spacing-horizontal);
-  border-right: 1px solid var(--fixed-color);
+  margin-right: 43px;
 }
 .wrapper .groups .group .items .person .person-photo {
   border: 2px solid #FFF;
@@ -99,7 +105,7 @@
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-end;
-  padding: 8px 0;
+  padding: 8px 0 0 0;
   gap: 4px;
 }
 .wrapper .groups .group .items .person .person-detail .person-name {
@@ -111,6 +117,11 @@
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child {
   font-size: 18px;
+  flex-direction: row;
+  margin-right: 90px;
+}
+.wrapper[data-hasratios] .groups .group .items .person:first-child .person-detail {
+  margin-left: 1rem;
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child .person-detail .person-name {
   color: #FFF;
@@ -120,19 +131,31 @@
   flex-direction: row;
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child .person-photo {
-  display: none;
+  width: 97px;
+  height: 97px;
 }
 @media (max-width: 768px) {
   .wrapper {
     padding: 0 var(--spacing-horizontal);
   }
   .wrapper .groups .group {
-    height: auto;
-    justify-content: flex-start;
+    background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 34%), #1D2025;
+    flex-direction: column;
+    height: fit-content;
   }
   .wrapper .groups .group .items {
-    margin-top: 16px;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  .wrapper .groups .group .items > * {
+    flex: 0 1 1%;
+  }
+  .wrapper .groups .group .items .person {
+    margin-right: 2rem;
+  }
+  .wrapper[data-hasratios] .groups .group .items .person:first-child {
+    flex-basis: 100%;
+    margin-right: 2px;
+    padding-bottom: 2rem;
   }
 }
