@@ -143,11 +143,11 @@
     grid-template-rows: auto auto;
     grid-template-columns: 1fr frepeat(auto-fit, 100px);
   }
-}
-.wrapper[data-hasratios] .groups .group .items .person:first-child {
-  grid-column-start: 1;
-  grid-column-end: 10;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  padding: 1rem 0 3rem 0;
+  .wrapper[data-hasratios] .groups .group .items .person:first-child {
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    padding: 1rem 0 3rem 0;
+  }
 }

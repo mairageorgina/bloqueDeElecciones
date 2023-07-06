@@ -88,6 +88,7 @@
                 align-items: flex-start;
                 flex-direction: row;
                 flex-wrap: nowrap;
+            
 
                 .person {
                     font-size: 16px;
@@ -171,23 +172,20 @@
 
                 .items {
                     display: grid;
-                   grid-template-rows: auto auto;
-                   grid-template-columns: 1fr frepeat(auto-fit, 100px);
+                    grid-template-rows: auto auto;
+                    grid-template-columns: 1fr frepeat(auto-fit, 100px);
+                }
             }
-        }
-    }
-
-
         }
 
         &[data-hasratios] .groups .group .items .person {
             &:first-child {
-                grid-column-start: 1; 
-                grid-column-end: 10; 
-                grid-row-start: 1; 
+                grid-column-start: 1;
+                grid-column-end: 10;
+                grid-row-start: 1;
                 grid-row-end: 1;
                 padding: 1rem 0 3rem 0;
             }
         }
-    
+    }
 }
