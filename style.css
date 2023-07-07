@@ -21,22 +21,25 @@
   display: flex;
   overflow-x: auto;
   gap: var(--spacing-horizontal);
+  padding-bottom: 10px;
+  margin-bottom: 5px;
 }
 .wrapper .groups::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: #EBF0F5;
 }
 .wrapper .groups::-webkit-scrollbar {
-  width: 12px;
-  background-color: #F5F5F5;
+  width: 6px;
+  height: 7px;
+  background-color: #EBF0F5;
 }
 .wrapper .groups::-webkit-scrollbar-thumb {
-  background-color: #DaDaDa;
-  border-radius: 20px;
-  border: 3px #DADADA;
+  background-color: #09A3E3;
+  border-radius: 22px;
+  border: 1px #09A3E3;
 }
 .wrapper .groups .group {
   border-radius: 12px;
-  background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 70%), #1D2025;
+  background: linear-gradient(155deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 90%), #1D2025;
   padding: 22px 27px;
   display: flex;
   flex-direction: column;
@@ -86,12 +89,11 @@
   margin-right: 43px;
 }
 .wrapper .groups .group .items .person .person-photo {
-  border: 2px solid #FFF;
+  border: 3px solid #FFF;
   width: 64px;
   height: 64px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 2px 4px #000a;
 }
 .wrapper .groups .group .items .person .person-detail {
   display: flex;
@@ -108,7 +110,7 @@
   text-wrap: nowrap;
 }
 .wrapper[data-hasratios] .groups .group .items .person:first-child {
-  font-size: 18px;
+  font-size: 24px;
   flex-direction: row;
   margin-right: 90px;
 }
@@ -134,7 +136,7 @@
     padding: 0 var(--spacing-horizontal);
   }
   .wrapper .groups .group {
-    background: linear-gradient(90deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 54%), #1D2025;
+    background: linear-gradient(155deg, var(--group-color) 0%, rgba(75, 203, 255, 0) 80%), #1D2025;
     flex-direction: column;
     height: auto;
   }
@@ -148,6 +150,6 @@
     grid-column-end: 10;
     grid-row-start: 1;
     grid-row-end: 1;
-    padding: 1rem 0 3rem 0;
+    padding: 2rem 0 2rem 0;
   }
 }
